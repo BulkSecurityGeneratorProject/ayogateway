@@ -1,0 +1,32 @@
+{
+    "ayogatewayApp": {
+        "memberHp" : {
+            "home": {
+                "title": "Member Hps",
+                "createLabel": "Buat Member Hp baru",
+                "createOrEditLabel": "Buat atau edit Member Hp",
+                "search": "Cari Member Hp"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Member Hp {{ id }}?"
+            },
+            "detail": {
+                "title": "Member Hp"
+            },
+            "idMember": "Id Member",
+            "hp": "Hp",
+            "typeim": "Typeim",
+            "istrx": "Istrx",
+            "crypt": "Crypt",
+            "typemsg": "Typemsg",
+            "member": "Member"
+        }
+    },
+    "ayoappApp": {
+        "memberHp" : {
+            "created": "Member Hp dengan id {{ param }} telah dibuat",
+            "updated": "Member Hp dengan id {{ param }} telah diperbaharui",
+            "deleted": "Member Hp dengan id {{ param }} telah dihapus"
+        }
+    }
+}

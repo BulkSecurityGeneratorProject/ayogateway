@@ -1,0 +1,150 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.member.home.title">Members</span>
+        <button class="btn btn-primary float-right jh-create-entity create-member" [routerLink]="['/', { outlets: { popup: ['member-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.member.home.createLabel">
+            Create new Member
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.member.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="members">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMember"><span jhiTranslate="ayogatewayApp.member.idMember">Id Member</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglRegister"><span jhiTranslate="ayogatewayApp.member.tglRegister">Tgl Register</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nama"><span jhiTranslate="ayogatewayApp.member.nama">Nama</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="alamat"><span jhiTranslate="ayogatewayApp.member.alamat">Alamat</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pin"><span jhiTranslate="ayogatewayApp.member.pin">Pin</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span jhiTranslate="ayogatewayApp.member.status">Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="saldo"><span jhiTranslate="ayogatewayApp.member.saldo">Saldo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idUpline"><span jhiTranslate="ayogatewayApp.member.idUpline">Id Upline</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeLevel"><span jhiTranslate="ayogatewayApp.member.kodeLevel">Kode Level</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglInput"><span jhiTranslate="ayogatewayApp.member.tglInput">Tgl Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userInput"><span jhiTranslate="ayogatewayApp.member.userInput">User Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglUpdate"><span jhiTranslate="ayogatewayApp.member.tglUpdate">Tgl Update</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userUpdate"><span jhiTranslate="ayogatewayApp.member.userUpdate">User Update</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMaster"><span jhiTranslate="ayogatewayApp.member.idMaster">Id Master</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rptTrx"><span jhiTranslate="ayogatewayApp.member.rptTrx">Rpt Trx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="selisih"><span jhiTranslate="ayogatewayApp.member.selisih">Selisih</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="counter"><span jhiTranslate="ayogatewayApp.member.counter">Counter</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dongleNo"><span jhiTranslate="ayogatewayApp.member.dongleNo">Dongle No</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="head2head"><span jhiTranslate="ayogatewayApp.member.head2head">Head 2 Head</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ymid"><span jhiTranslate="ayogatewayApp.member.ymid">Ymid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="iprpt"><span jhiTranslate="ayogatewayApp.member.iprpt">Iprpt</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastTrx"><span jhiTranslate="ayogatewayApp.member.lastTrx">Last Trx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ref"><span jhiTranslate="ayogatewayApp.member.ref">Ref</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="crypt"><span jhiTranslate="ayogatewayApp.member.crypt">Crypt</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="gtalkid"><span jhiTranslate="ayogatewayApp.member.gtalkid">Gtalkid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="vremsgid"><span jhiTranslate="ayogatewayApp.member.vremsgid">Vremsgid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodepos"><span jhiTranslate="ayogatewayApp.member.kodepos">Kodepos</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="iswarn"><span jhiTranslate="ayogatewayApp.member.iswarn">Iswarn</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="msnid"><span jhiTranslate="ayogatewayApp.member.msnid">Msnid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idlogsal"><span jhiTranslate="ayogatewayApp.member.idlogsal">Idlogsal</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastKodetrx"><span jhiTranslate="ayogatewayApp.member.lastKodetrx">Last Kodetrx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastIdtrx"><span jhiTranslate="ayogatewayApp.member.lastIdtrx">Last Idtrx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="telebotid"><span jhiTranslate="ayogatewayApp.member.telebotid">Telebotid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="telegramid"><span jhiTranslate="ayogatewayApp.member.telegramid">Telegramid</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isowner"><span jhiTranslate="ayogatewayApp.member.isowner">Isowner</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cryptowner"><span jhiTranslate="ayogatewayApp.member.cryptowner">Cryptowner</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pinowner"><span jhiTranslate="ayogatewayApp.member.pinowner">Pinowner</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let member of members ;trackBy: trackId">
+                <td><a [routerLink]="['../member', member.id ]">{{member.id}}</a></td>
+                <td>{{member.idMember}}</td>
+                <td>{{member.tglRegister | date:'mediumDate'}}</td>
+                <td>{{member.nama}}</td>
+                <td>{{member.alamat}}</td>
+                <td>{{member.pin}}</td>
+                <td>{{member.status}}</td>
+                <td>{{member.saldo}}</td>
+                <td>{{member.idUpline}}</td>
+                <td>{{member.kodeLevel}}</td>
+                <td>{{member.tglInput | date:'medium'}}</td>
+                <td>{{member.userInput}}</td>
+                <td>{{member.tglUpdate | date:'medium'}}</td>
+                <td>{{member.userUpdate}}</td>
+                <td>{{member.idMaster}}</td>
+                <td>{{member.rptTrx}}</td>
+                <td>{{member.selisih}}</td>
+                <td>{{member.counter}}</td>
+                <td>{{member.dongleNo}}</td>
+                <td>{{member.head2head}}</td>
+                <td>{{member.ymid}}</td>
+                <td>{{member.iprpt}}</td>
+                <td>{{member.lastTrx | date:'medium'}}</td>
+                <td>{{member.ref}}</td>
+                <td>{{member.crypt}}</td>
+                <td>{{member.gtalkid}}</td>
+                <td>{{member.vremsgid}}</td>
+                <td>{{member.kodepos}}</td>
+                <td>{{member.iswarn}}</td>
+                <td>{{member.msnid}}</td>
+                <td>{{member.idlogsal}}</td>
+                <td>{{member.lastKodetrx}}</td>
+                <td>{{member.lastIdtrx}}</td>
+                <td>{{member.telebotid}}</td>
+                <td>{{member.telegramid}}</td>
+                <td>{{member.isowner}}</td>
+                <td>{{member.cryptowner}}</td>
+                <td>{{member.pinowner}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../member', member.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'member/'+ member.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'member/'+ member.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="members && members.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

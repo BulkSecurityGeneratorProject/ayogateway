@@ -1,0 +1,32 @@
+{
+    "ayogatewayApp": {
+        "memberHp" : {
+            "home": {
+                "title": "Member Hps",
+                "createLabel": "Create a new Member Hp",
+                "createOrEditLabel": "Create or edit a Member Hp",
+                "search": "Search for Member Hp"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Member Hp {{ id }}?"
+            },
+            "detail": {
+                "title": "Member Hp"
+            },
+            "idMember": "Id Member",
+            "hp": "Hp",
+            "typeim": "Typeim",
+            "istrx": "Istrx",
+            "crypt": "Crypt",
+            "typemsg": "Typemsg",
+            "member": "Member"
+        }
+    },
+    "ayoappApp": {
+        "memberHp" : {
+            "created": "A new Member Hp is created with identifier {{ param }}",
+            "updated": "A Member Hp is updated with identifier {{ param }}",
+            "deleted": "A Member Hp is deleted with identifier {{ param }}"
+        }
+    }
+}

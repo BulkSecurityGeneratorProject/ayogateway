@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.ib",
-      "nativeLanguage": "id"
+      "nativeLanguage": "id",
+      "microservicePath": "E:\\workspaces\\wsbackend\\ayo\\ayoapp"
     },
     "jhipsterVersion": "4.7.0",
     "baseName": "ayogateway",

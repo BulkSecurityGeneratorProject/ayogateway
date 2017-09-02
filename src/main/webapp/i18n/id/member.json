@@ -1,0 +1,63 @@
+{
+    "ayogatewayApp": {
+        "member" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "Buat Member baru",
+                "createOrEditLabel": "Buat atau edit Member",
+                "search": "Cari Member"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Member"
+            },
+            "idMember": "Id Member",
+            "tglRegister": "Tgl Register",
+            "nama": "Nama",
+            "alamat": "Alamat",
+            "pin": "Pin",
+            "status": "Status",
+            "saldo": "Saldo",
+            "idUpline": "Id Upline",
+            "kodeLevel": "Kode Level",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "tglUpdate": "Tgl Update",
+            "userUpdate": "User Update",
+            "idMaster": "Id Master",
+            "rptTrx": "Rpt Trx",
+            "selisih": "Selisih",
+            "counter": "Counter",
+            "dongleNo": "Dongle No",
+            "head2head": "Head 2 Head",
+            "ymid": "Ymid",
+            "iprpt": "Iprpt",
+            "lastTrx": "Last Trx",
+            "ref": "Ref",
+            "crypt": "Crypt",
+            "gtalkid": "Gtalkid",
+            "vremsgid": "Vremsgid",
+            "kodepos": "Kodepos",
+            "iswarn": "Iswarn",
+            "msnid": "Msnid",
+            "idlogsal": "Idlogsal",
+            "lastKodetrx": "Last Kodetrx",
+            "lastIdtrx": "Last Idtrx",
+            "telebotid": "Telebotid",
+            "telegramid": "Telegramid",
+            "isowner": "Isowner",
+            "cryptowner": "Cryptowner",
+            "pinowner": "Pinowner",
+            "memberHp": "Member Hp"
+        }
+    },
+    "ayoappApp": {
+        "member" : {
+            "created": "Member dengan id {{ param }} telah dibuat",
+            "updated": "Member dengan id {{ param }} telah diperbaharui",
+            "deleted": "Member dengan id {{ param }} telah dihapus"
+        }
+    }
+}

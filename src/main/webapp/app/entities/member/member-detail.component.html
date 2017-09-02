@@ -1,0 +1,169 @@
+
+<div *ngIf="member">
+    <h2><span jhiTranslate="ayogatewayApp.member.detail.title">Member</span> {{member.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.member.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{member.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.tglRegister">Tgl Register</span></dt>
+        <dd>
+            <span>{{member.tglRegister | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.nama">Nama</span></dt>
+        <dd>
+            <span>{{member.nama}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.alamat">Alamat</span></dt>
+        <dd>
+            <span>{{member.alamat}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.pin">Pin</span></dt>
+        <dd>
+            <span>{{member.pin}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.status">Status</span></dt>
+        <dd>
+            <span>{{member.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.saldo">Saldo</span></dt>
+        <dd>
+            <span>{{member.saldo}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.idUpline">Id Upline</span></dt>
+        <dd>
+            <span>{{member.idUpline}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.kodeLevel">Kode Level</span></dt>
+        <dd>
+            <span>{{member.kodeLevel}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.tglInput">Tgl Input</span></dt>
+        <dd>
+            <span>{{member.tglInput | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.userInput">User Input</span></dt>
+        <dd>
+            <span>{{member.userInput}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.tglUpdate">Tgl Update</span></dt>
+        <dd>
+            <span>{{member.tglUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.userUpdate">User Update</span></dt>
+        <dd>
+            <span>{{member.userUpdate}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.idMaster">Id Master</span></dt>
+        <dd>
+            <span>{{member.idMaster}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.rptTrx">Rpt Trx</span></dt>
+        <dd>
+            <span>{{member.rptTrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.selisih">Selisih</span></dt>
+        <dd>
+            <span>{{member.selisih}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.counter">Counter</span></dt>
+        <dd>
+            <span>{{member.counter}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.dongleNo">Dongle No</span></dt>
+        <dd>
+            <span>{{member.dongleNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.head2head">Head 2 Head</span></dt>
+        <dd>
+            <span>{{member.head2head}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.ymid">Ymid</span></dt>
+        <dd>
+            <span>{{member.ymid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.iprpt">Iprpt</span></dt>
+        <dd>
+            <span>{{member.iprpt}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.lastTrx">Last Trx</span></dt>
+        <dd>
+            <span>{{member.lastTrx | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.ref">Ref</span></dt>
+        <dd>
+            <span>{{member.ref}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.crypt">Crypt</span></dt>
+        <dd>
+            <span>{{member.crypt}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.gtalkid">Gtalkid</span></dt>
+        <dd>
+            <span>{{member.gtalkid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.vremsgid">Vremsgid</span></dt>
+        <dd>
+            <span>{{member.vremsgid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.kodepos">Kodepos</span></dt>
+        <dd>
+            <span>{{member.kodepos}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.iswarn">Iswarn</span></dt>
+        <dd>
+            <span>{{member.iswarn}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.msnid">Msnid</span></dt>
+        <dd>
+            <span>{{member.msnid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.idlogsal">Idlogsal</span></dt>
+        <dd>
+            <span>{{member.idlogsal}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.lastKodetrx">Last Kodetrx</span></dt>
+        <dd>
+            <span>{{member.lastKodetrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.lastIdtrx">Last Idtrx</span></dt>
+        <dd>
+            <span>{{member.lastIdtrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.telebotid">Telebotid</span></dt>
+        <dd>
+            <span>{{member.telebotid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.telegramid">Telegramid</span></dt>
+        <dd>
+            <span>{{member.telegramid}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.isowner">Isowner</span></dt>
+        <dd>
+            <span>{{member.isowner}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.cryptowner">Cryptowner</span></dt>
+        <dd>
+            <span>{{member.cryptowner}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.member.pinowner">Pinowner</span></dt>
+        <dd>
+            <span>{{member.pinowner}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'member/'+ member.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

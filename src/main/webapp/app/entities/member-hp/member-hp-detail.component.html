@@ -1,0 +1,51 @@
+
+<div *ngIf="memberHp">
+    <h2><span jhiTranslate="ayogatewayApp.memberHp.detail.title">Member Hp</span> {{memberHp.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{memberHp.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.hp">Hp</span></dt>
+        <dd>
+            <span>{{memberHp.hp}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.typeim">Typeim</span></dt>
+        <dd>
+            <span>{{memberHp.typeim}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.istrx">Istrx</span></dt>
+        <dd>
+            <span>{{memberHp.istrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.crypt">Crypt</span></dt>
+        <dd>
+            <span>{{memberHp.crypt}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.typemsg">Typemsg</span></dt>
+        <dd>
+            <span>{{memberHp.typemsg}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.memberHp.member">Member</span></dt>
+        <dd>
+            <div *ngIf="memberHp.member">
+                <a [routerLink]="['/member', memberHp.member?.id]">{{memberHp.member?.idMember}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'member-hp/'+ memberHp.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

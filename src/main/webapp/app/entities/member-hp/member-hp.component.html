@@ -1,0 +1,94 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.memberHp.home.title">Member Hps</span>
+        <button class="btn btn-primary float-right jh-create-entity create-member-hp" [routerLink]="['/', { outlets: { popup: ['member-hp-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.memberHp.home.createLabel">
+            Create new Member Hp
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.memberHp.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="memberHps">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMember"><span jhiTranslate="ayogatewayApp.memberHp.idMember">Id Member</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="hp"><span jhiTranslate="ayogatewayApp.memberHp.hp">Hp</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="typeim"><span jhiTranslate="ayogatewayApp.memberHp.typeim">Typeim</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="istrx"><span jhiTranslate="ayogatewayApp.memberHp.istrx">Istrx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="crypt"><span jhiTranslate="ayogatewayApp.memberHp.crypt">Crypt</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="typemsg"><span jhiTranslate="ayogatewayApp.memberHp.typemsg">Typemsg</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="member.idMember"><span jhiTranslate="ayogatewayApp.memberHp.member">Member</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let memberHp of memberHps ;trackBy: trackId">
+                <td><a [routerLink]="['../member-hp', memberHp.id ]">{{memberHp.id}}</a></td>
+                <td>{{memberHp.idMember}}</td>
+                <td>{{memberHp.hp}}</td>
+                <td>{{memberHp.typeim}}</td>
+                <td>{{memberHp.istrx}}</td>
+                <td>{{memberHp.crypt}}</td>
+                <td>{{memberHp.typemsg}}</td>
+                <td>
+                    <div *ngIf="memberHp.member">
+                        <a [routerLink]="['../member', memberHp.member?.id ]" >{{memberHp.member?.idMember}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../member-hp', memberHp.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'member-hp/'+ memberHp.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'member-hp/'+ memberHp.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="memberHps && memberHps.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "member",
+            "otherEntityName": "member",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "idMember"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idMember",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hp",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "typeim",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "istrx",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "crypt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typemsg",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170902013102",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "member_hp",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pager",
+    "microserviceName": "ayoapp",
+    "searchEngine": "elasticsearch"
+}

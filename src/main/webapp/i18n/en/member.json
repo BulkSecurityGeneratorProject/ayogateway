@@ -1,0 +1,63 @@
+{
+    "ayogatewayApp": {
+        "member" : {
+            "home": {
+                "title": "Members",
+                "createLabel": "Create a new Member",
+                "createOrEditLabel": "Create or edit a Member",
+                "search": "Search for Member"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Member"
+            },
+            "idMember": "Id Member",
+            "tglRegister": "Tgl Register",
+            "nama": "Nama",
+            "alamat": "Alamat",
+            "pin": "Pin",
+            "status": "Status",
+            "saldo": "Saldo",
+            "idUpline": "Id Upline",
+            "kodeLevel": "Kode Level",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "tglUpdate": "Tgl Update",
+            "userUpdate": "User Update",
+            "idMaster": "Id Master",
+            "rptTrx": "Rpt Trx",
+            "selisih": "Selisih",
+            "counter": "Counter",
+            "dongleNo": "Dongle No",
+            "head2head": "Head 2 Head",
+            "ymid": "Ymid",
+            "iprpt": "Iprpt",
+            "lastTrx": "Last Trx",
+            "ref": "Ref",
+            "crypt": "Crypt",
+            "gtalkid": "Gtalkid",
+            "vremsgid": "Vremsgid",
+            "kodepos": "Kodepos",
+            "iswarn": "Iswarn",
+            "msnid": "Msnid",
+            "idlogsal": "Idlogsal",
+            "lastKodetrx": "Last Kodetrx",
+            "lastIdtrx": "Last Idtrx",
+            "telebotid": "Telebotid",
+            "telegramid": "Telegramid",
+            "isowner": "Isowner",
+            "cryptowner": "Cryptowner",
+            "pinowner": "Pinowner",
+            "memberHp": "Member Hp"
+        }
+    },
+    "ayoappApp": {
+        "member" : {
+            "created": "A new Member is created with identifier {{ param }}",
+            "updated": "A Member is updated with identifier {{ param }}",
+            "deleted": "A Member is deleted with identifier {{ param }}"
+        }
+    }
+}

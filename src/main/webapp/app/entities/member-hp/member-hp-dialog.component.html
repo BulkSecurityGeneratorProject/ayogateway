@@ -1,0 +1,74 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMemberHpLabel" jhiTranslate="ayogatewayApp.memberHp.home.createOrEditLabel">Create or edit a Member Hp</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!memberHp.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="memberHp.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.idMember" for="field_idMember">Id Member</label>
+            <input type="text" class="form-control" name="idMember" id="field_idMember"
+                [(ngModel)]="memberHp.idMember" required />
+            <div [hidden]="!(editForm.controls.idMember?.dirty && editForm.controls.idMember?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.idMember?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.hp" for="field_hp">Hp</label>
+            <input type="text" class="form-control" name="hp" id="field_hp"
+                [(ngModel)]="memberHp.hp" required />
+            <div [hidden]="!(editForm.controls.hp?.dirty && editForm.controls.hp?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.hp?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.typeim" for="field_typeim">Typeim</label>
+            <input type="number" class="form-control" name="typeim" id="field_typeim"
+                [(ngModel)]="memberHp.typeim"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.istrx" for="field_istrx">Istrx</label>
+            <input type="number" class="form-control" name="istrx" id="field_istrx"
+                [(ngModel)]="memberHp.istrx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.crypt" for="field_crypt">Crypt</label>
+            <input type="text" class="form-control" name="crypt" id="field_crypt"
+                [(ngModel)]="memberHp.crypt"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.typemsg" for="field_typemsg">Typemsg</label>
+            <input type="number" class="form-control" name="typemsg" id="field_typemsg"
+                [(ngModel)]="memberHp.typemsg"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.memberHp.member" for="field_member">Member</label>
+            <select class="form-control" id="field_member" name="member" [(ngModel)]="memberHp.member" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="memberOption.id === memberHp.member?.id ? memberHp.member : memberOption" *ngFor="let memberOption of members; trackBy: trackMemberById">{{memberOption.idMember}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

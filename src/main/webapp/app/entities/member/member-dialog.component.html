@@ -1,0 +1,263 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMemberLabel" jhiTranslate="ayogatewayApp.member.home.createOrEditLabel">Create or edit a Member</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!member.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="member.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.idMember" for="field_idMember">Id Member</label>
+            <input type="text" class="form-control" name="idMember" id="field_idMember"
+                [(ngModel)]="member.idMember" required />
+            <div [hidden]="!(editForm.controls.idMember?.dirty && editForm.controls.idMember?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.idMember?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.tglRegister" for="field_tglRegister">Tgl Register</label>
+            <div class="input-group">
+                <input id="field_tglRegister" type="text" class="form-control" name="tglRegister" ngbDatepicker  #tglRegisterDp="ngbDatepicker" [(ngModel)]="member.tglRegister"
+                required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="tglRegisterDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.tglRegister?.dirty && editForm.controls.tglRegister?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.tglRegister?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.nama" for="field_nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="field_nama"
+                [(ngModel)]="member.nama"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.alamat" for="field_alamat">Alamat</label>
+            <input type="text" class="form-control" name="alamat" id="field_alamat"
+                [(ngModel)]="member.alamat"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.pin" for="field_pin">Pin</label>
+            <input type="text" class="form-control" name="pin" id="field_pin"
+                [(ngModel)]="member.pin"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                [(ngModel)]="member.status"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.saldo" for="field_saldo">Saldo</label>
+            <input type="number" class="form-control" name="saldo" id="field_saldo"
+                [(ngModel)]="member.saldo" required />
+            <div [hidden]="!(editForm.controls.saldo?.dirty && editForm.controls.saldo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.saldo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.saldo?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.idUpline" for="field_idUpline">Id Upline</label>
+            <input type="text" class="form-control" name="idUpline" id="field_idUpline"
+                [(ngModel)]="member.idUpline"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.kodeLevel" for="field_kodeLevel">Kode Level</label>
+            <input type="text" class="form-control" name="kodeLevel" id="field_kodeLevel"
+                [(ngModel)]="member.kodeLevel"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.tglInput" for="field_tglInput">Tgl Input</label>
+            <div class="d-flex">
+                <input id="field_tglInput" type="datetime-local" class="form-control" name="tglInput" [(ngModel)]="member.tglInput"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.userInput" for="field_userInput">User Input</label>
+            <input type="text" class="form-control" name="userInput" id="field_userInput"
+                [(ngModel)]="member.userInput"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.tglUpdate" for="field_tglUpdate">Tgl Update</label>
+            <div class="d-flex">
+                <input id="field_tglUpdate" type="datetime-local" class="form-control" name="tglUpdate" [(ngModel)]="member.tglUpdate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.userUpdate" for="field_userUpdate">User Update</label>
+            <input type="text" class="form-control" name="userUpdate" id="field_userUpdate"
+                [(ngModel)]="member.userUpdate"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.idMaster" for="field_idMaster">Id Master</label>
+            <input type="text" class="form-control" name="idMaster" id="field_idMaster"
+                [(ngModel)]="member.idMaster"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.rptTrx" for="field_rptTrx">Rpt Trx</label>
+            <input type="number" class="form-control" name="rptTrx" id="field_rptTrx"
+                [(ngModel)]="member.rptTrx" required />
+            <div [hidden]="!(editForm.controls.rptTrx?.dirty && editForm.controls.rptTrx?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.rptTrx?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.rptTrx?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.selisih" for="field_selisih">Selisih</label>
+            <input type="number" class="form-control" name="selisih" id="field_selisih"
+                [(ngModel)]="member.selisih" required />
+            <div [hidden]="!(editForm.controls.selisih?.dirty && editForm.controls.selisih?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.selisih?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.selisih?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.counter" for="field_counter">Counter</label>
+            <input type="number" class="form-control" name="counter" id="field_counter"
+                [(ngModel)]="member.counter"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.dongleNo" for="field_dongleNo">Dongle No</label>
+            <input type="text" class="form-control" name="dongleNo" id="field_dongleNo"
+                [(ngModel)]="member.dongleNo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.head2head" for="field_head2head">Head 2 Head</label>
+            <input type="number" class="form-control" name="head2head" id="field_head2head"
+                [(ngModel)]="member.head2head"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.ymid" for="field_ymid">Ymid</label>
+            <input type="text" class="form-control" name="ymid" id="field_ymid"
+                [(ngModel)]="member.ymid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.iprpt" for="field_iprpt">Iprpt</label>
+            <input type="text" class="form-control" name="iprpt" id="field_iprpt"
+                [(ngModel)]="member.iprpt"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.lastTrx" for="field_lastTrx">Last Trx</label>
+            <div class="d-flex">
+                <input id="field_lastTrx" type="datetime-local" class="form-control" name="lastTrx" [(ngModel)]="member.lastTrx"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.ref" for="field_ref">Ref</label>
+            <input type="text" class="form-control" name="ref" id="field_ref"
+                [(ngModel)]="member.ref"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.crypt" for="field_crypt">Crypt</label>
+            <input type="text" class="form-control" name="crypt" id="field_crypt"
+                [(ngModel)]="member.crypt"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.gtalkid" for="field_gtalkid">Gtalkid</label>
+            <input type="text" class="form-control" name="gtalkid" id="field_gtalkid"
+                [(ngModel)]="member.gtalkid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.vremsgid" for="field_vremsgid">Vremsgid</label>
+            <input type="text" class="form-control" name="vremsgid" id="field_vremsgid"
+                [(ngModel)]="member.vremsgid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.kodepos" for="field_kodepos">Kodepos</label>
+            <input type="text" class="form-control" name="kodepos" id="field_kodepos"
+                [(ngModel)]="member.kodepos"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.iswarn" for="field_iswarn">Iswarn</label>
+            <input type="number" class="form-control" name="iswarn" id="field_iswarn"
+                [(ngModel)]="member.iswarn"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.msnid" for="field_msnid">Msnid</label>
+            <input type="text" class="form-control" name="msnid" id="field_msnid"
+                [(ngModel)]="member.msnid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.idlogsal" for="field_idlogsal">Idlogsal</label>
+            <input type="number" class="form-control" name="idlogsal" id="field_idlogsal"
+                [(ngModel)]="member.idlogsal"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.lastKodetrx" for="field_lastKodetrx">Last Kodetrx</label>
+            <input type="number" class="form-control" name="lastKodetrx" id="field_lastKodetrx"
+                [(ngModel)]="member.lastKodetrx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.lastIdtrx" for="field_lastIdtrx">Last Idtrx</label>
+            <input type="number" class="form-control" name="lastIdtrx" id="field_lastIdtrx"
+                [(ngModel)]="member.lastIdtrx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.telebotid" for="field_telebotid">Telebotid</label>
+            <input type="text" class="form-control" name="telebotid" id="field_telebotid"
+                [(ngModel)]="member.telebotid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.telegramid" for="field_telegramid">Telegramid</label>
+            <input type="text" class="form-control" name="telegramid" id="field_telegramid"
+                [(ngModel)]="member.telegramid"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.isowner" for="field_isowner">Isowner</label>
+            <input type="number" class="form-control" name="isowner" id="field_isowner"
+                [(ngModel)]="member.isowner"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.cryptowner" for="field_cryptowner">Cryptowner</label>
+            <input type="text" class="form-control" name="cryptowner" id="field_cryptowner"
+                [(ngModel)]="member.cryptowner"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.member.pinowner" for="field_pinowner">Pinowner</label>
+            <input type="text" class="form-control" name="pinowner" id="field_pinowner"
+                [(ngModel)]="member.pinowner"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

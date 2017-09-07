@@ -1,0 +1,26 @@
+{
+    "ayogatewayApp": {
+        "denom" : {
+            "home": {
+                "title": "Denoms",
+                "createLabel": "Create a new Denom",
+                "createOrEditLabel": "Create or edit a Denom",
+                "search": "Search for Denom"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Denom {{ id }}?"
+            },
+            "detail": {
+                "title": "Denom"
+            },
+            "jmlDenom": "Jml Denom"
+        }
+    },
+    "ayoappApp": {
+        "denom" : {
+            "created": "A new Denom is created with identifier {{ param }}",
+            "updated": "A Denom is updated with identifier {{ param }}",
+            "deleted": "A Denom is deleted with identifier {{ param }}"
+        }
+    }
+}

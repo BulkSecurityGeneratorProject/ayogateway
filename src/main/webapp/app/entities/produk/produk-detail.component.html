@@ -1,0 +1,137 @@
+
+<div *ngIf="produk">
+    <h2><span jhiTranslate="ayogatewayApp.produk.detail.title">Produk</span> {{produk.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.produk.idProduk">Id Produk</span></dt>
+        <dd>
+            <span>{{produk.idProduk}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.kodeProduk">Kode Produk</span></dt>
+        <dd>
+            <span>{{produk.kodeProduk}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.idKartu">Id Kartu</span></dt>
+        <dd>
+            <span>{{produk.idKartu}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.denom">Denom</span></dt>
+        <dd>
+            <span>{{produk.denom}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.hpp">Hpp</span></dt>
+        <dd>
+            <span>{{produk.hpp}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.hargaMan">Harga Man</span></dt>
+        <dd>
+            <span>{{produk.hargaMan}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.status">Status</span></dt>
+        <dd>
+            <span>{{produk.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.gangguan">Gangguan</span></dt>
+        <dd>
+            <span>{{produk.gangguan}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.idDistributor">Id Distributor</span></dt>
+        <dd>
+            <span>{{produk.idDistributor}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.fisik">Fisik</span></dt>
+        <dd>
+            <span>{{produk.fisik}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.tglUpdate">Tgl Update</span></dt>
+        <dd>
+            <span>{{produk.tglUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.userUpdate">User Update</span></dt>
+        <dd>
+            <span>{{produk.userUpdate}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.idDistributor2">Id Distributor 2</span></dt>
+        <dd>
+            <span>{{produk.idDistributor2}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.konversiSaldo">Konversi Saldo</span></dt>
+        <dd>
+            <span>{{produk.konversiSaldo}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.isreport">Isreport</span></dt>
+        <dd>
+            <span>{{produk.isreport}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.issplit">Issplit</span></dt>
+        <dd>
+            <span>{{produk.issplit}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.ototimeopen">Ototimeopen</span></dt>
+        <dd>
+            <span>{{produk.ototimeopen}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.ototimeclose">Ototimeclose</span></dt>
+        <dd>
+            <span>{{produk.ototimeclose}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.idDistributor3">Id Distributor 3</span></dt>
+        <dd>
+            <span>{{produk.idDistributor3}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.isstok">Isstok</span></dt>
+        <dd>
+            <span>{{produk.isstok}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.otoclosestatus">Otoclosestatus</span></dt>
+        <dd>
+            <span>{{produk.otoclosestatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.saldoMin">Saldo Min</span></dt>
+        <dd>
+            <span>{{produk.saldoMin}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.akses">Akses</span></dt>
+        <dd>
+            <span>{{produk.akses}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.hlr">Hlr</span></dt>
+        <dd>
+            <span>{{produk.hlr}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.isulang">Isulang</span></dt>
+        <dd>
+            <span>{{produk.isulang}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.isurut">Isurut</span></dt>
+        <dd>
+            <span>{{produk.isurut}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.formatppob">Formatppob</span></dt>
+        <dd>
+            <span>{{produk.formatppob}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.jenisppob">Jenisppob</span></dt>
+        <dd>
+            <span>{{produk.jenisppob}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.produk.ketproduk">Ketproduk</span></dt>
+        <dd>
+            <span>{{produk.ketproduk}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'produk/'+ produk.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

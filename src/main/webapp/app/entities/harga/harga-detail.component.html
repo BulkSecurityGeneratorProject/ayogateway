@@ -1,0 +1,49 @@
+
+<div *ngIf="harga">
+    <h2><span jhiTranslate="ayogatewayApp.harga.detail.title">Harga</span> {{harga.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.harga.idHarga">Id Harga</span></dt>
+        <dd>
+            <span>{{harga.idHarga}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.idProduk">Id Produk</span></dt>
+        <dd>
+            <span>{{harga.idProduk}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{harga.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.hargaJual">Harga Jual</span></dt>
+        <dd>
+            <span>{{harga.hargaJual}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.tglInput">Tgl Input</span></dt>
+        <dd>
+            <span>{{harga.tglInput | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.userInput">User Input</span></dt>
+        <dd>
+            <span>{{harga.userInput}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.harga.hargaBefore">Harga Before</span></dt>
+        <dd>
+            <span>{{harga.hargaBefore}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'harga/'+ harga.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

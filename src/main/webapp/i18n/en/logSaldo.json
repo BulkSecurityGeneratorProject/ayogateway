@@ -1,0 +1,36 @@
+{
+    "ayogatewayApp": {
+        "logSaldo" : {
+            "home": {
+                "title": "Log Saldos",
+                "createLabel": "Create a new Log Saldo",
+                "createOrEditLabel": "Create or edit a Log Saldo",
+                "search": "Search for Log Saldo"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Log Saldo {{ id }}?"
+            },
+            "detail": {
+                "title": "Log Saldo"
+            },
+            "idMember": "Id Member",
+            "saldo": "Saldo",
+            "act": "Act",
+            "tgl": "Tgl",
+            "ket": "Ket",
+            "ref": "Ref",
+            "tkode": "Tkode",
+            "kodetrx": "Kodetrx",
+            "msg": "Msg",
+            "userInput": "User Input",
+            "isstok": "Isstok"
+        }
+    },
+    "ayoappApp": {
+        "logSaldo" : {
+            "created": "A new Log Saldo is created with identifier {{ param }}",
+            "updated": "A Log Saldo is updated with identifier {{ param }}",
+            "deleted": "A Log Saldo is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "ayogatewayApp": {
+        "produk" : {
+            "home": {
+                "title": "Produks",
+                "createLabel": "Create a new Produk",
+                "createOrEditLabel": "Create or edit a Produk",
+                "search": "Search for Produk"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Produk {{ id }}?"
+            },
+            "detail": {
+                "title": "Produk"
+            },
+            "idProduk": "Id Produk",
+            "kodeProduk": "Kode Produk",
+            "idKartu": "Id Kartu",
+            "denom": "Denom",
+            "hpp": "Hpp",
+            "hargaMan": "Harga Man",
+            "status": "Status",
+            "gangguan": "Gangguan",
+            "idDistributor": "Id Distributor",
+            "fisik": "Fisik",
+            "tglUpdate": "Tgl Update",
+            "userUpdate": "User Update",
+            "idDistributor2": "Id Distributor 2",
+            "konversiSaldo": "Konversi Saldo",
+            "isreport": "Isreport",
+            "issplit": "Issplit",
+            "ototimeopen": "Ototimeopen",
+            "ototimeclose": "Ototimeclose",
+            "idDistributor3": "Id Distributor 3",
+            "isstok": "Isstok",
+            "otoclosestatus": "Otoclosestatus",
+            "saldoMin": "Saldo Min",
+            "akses": "Akses",
+            "hlr": "Hlr",
+            "isulang": "Isulang",
+            "isurut": "Isurut",
+            "formatppob": "Formatppob",
+            "jenisppob": "Jenisppob",
+            "ketproduk": "Ketproduk"
+        }
+    },
+    "ayoappApp": {
+        "produk" : {
+            "created": "A new Produk is created with identifier {{ param }}",
+            "updated": "A Produk is updated with identifier {{ param }}",
+            "deleted": "A Produk is deleted with identifier {{ param }}"
+        }
+    }
+}

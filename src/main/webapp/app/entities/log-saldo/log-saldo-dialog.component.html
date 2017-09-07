@@ -1,0 +1,82 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLogSaldoLabel" jhiTranslate="ayogatewayApp.logSaldo.home.createOrEditLabel">Create or edit a Log Saldo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!logSaldo.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="logSaldo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.idMember" for="field_idMember">Id Member</label>
+            <input type="text" class="form-control" name="idMember" id="field_idMember"
+                [(ngModel)]="logSaldo.idMember"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.saldo" for="field_saldo">Saldo</label>
+            <input type="number" class="form-control" name="saldo" id="field_saldo"
+                [(ngModel)]="logSaldo.saldo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.act" for="field_act">Act</label>
+            <input type="number" class="form-control" name="act" id="field_act"
+                [(ngModel)]="logSaldo.act"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.tgl" for="field_tgl">Tgl</label>
+            <div class="d-flex">
+                <input id="field_tgl" type="datetime-local" class="form-control" name="tgl" [(ngModel)]="logSaldo.tgl"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.ket" for="field_ket">Ket</label>
+            <input type="text" class="form-control" name="ket" id="field_ket"
+                [(ngModel)]="logSaldo.ket"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.ref" for="field_ref">Ref</label>
+            <input type="number" class="form-control" name="ref" id="field_ref"
+                [(ngModel)]="logSaldo.ref"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.tkode" for="field_tkode">Tkode</label>
+            <input type="number" class="form-control" name="tkode" id="field_tkode"
+                [(ngModel)]="logSaldo.tkode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.kodetrx" for="field_kodetrx">Kodetrx</label>
+            <input type="number" class="form-control" name="kodetrx" id="field_kodetrx"
+                [(ngModel)]="logSaldo.kodetrx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.msg" for="field_msg">Msg</label>
+            <input type="text" class="form-control" name="msg" id="field_msg"
+                [(ngModel)]="logSaldo.msg"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.userInput" for="field_userInput">User Input</label>
+            <input type="text" class="form-control" name="userInput" id="field_userInput"
+                [(ngModel)]="logSaldo.userInput"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.logSaldo.isstok" for="field_isstok">Isstok</label>
+            <input type="number" class="form-control" name="isstok" id="field_isstok"
+                [(ngModel)]="logSaldo.isstok"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

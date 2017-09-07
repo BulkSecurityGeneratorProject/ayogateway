@@ -1,0 +1,54 @@
+{
+    "ayogatewayApp": {
+        "produk" : {
+            "home": {
+                "title": "Produks",
+                "createLabel": "Buat Produk baru",
+                "createOrEditLabel": "Buat atau edit Produk",
+                "search": "Cari Produk"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Produk {{ id }}?"
+            },
+            "detail": {
+                "title": "Produk"
+            },
+            "idProduk": "Id Produk",
+            "kodeProduk": "Kode Produk",
+            "idKartu": "Id Kartu",
+            "denom": "Denom",
+            "hpp": "Hpp",
+            "hargaMan": "Harga Man",
+            "status": "Status",
+            "gangguan": "Gangguan",
+            "idDistributor": "Id Distributor",
+            "fisik": "Fisik",
+            "tglUpdate": "Tgl Update",
+            "userUpdate": "User Update",
+            "idDistributor2": "Id Distributor 2",
+            "konversiSaldo": "Konversi Saldo",
+            "isreport": "Isreport",
+            "issplit": "Issplit",
+            "ototimeopen": "Ototimeopen",
+            "ototimeclose": "Ototimeclose",
+            "idDistributor3": "Id Distributor 3",
+            "isstok": "Isstok",
+            "otoclosestatus": "Otoclosestatus",
+            "saldoMin": "Saldo Min",
+            "akses": "Akses",
+            "hlr": "Hlr",
+            "isulang": "Isulang",
+            "isurut": "Isurut",
+            "formatppob": "Formatppob",
+            "jenisppob": "Jenisppob",
+            "ketproduk": "Ketproduk"
+        }
+    },
+    "ayoappApp": {
+        "produk" : {
+            "created": "Produk dengan id {{ param }} telah dibuat",
+            "updated": "Produk dengan id {{ param }} telah diperbaharui",
+            "deleted": "Produk dengan id {{ param }} telah dihapus"
+        }
+    }
+}

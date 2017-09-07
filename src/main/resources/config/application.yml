@@ -114,7 +114,7 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: ayogateway@localhost
+        from: jualpulsa.server1@gmail.com
     swagger:
         default-include-pattern: /api/.*
         title: ayogateway API

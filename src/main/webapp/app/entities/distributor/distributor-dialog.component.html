@@ -1,0 +1,209 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDistributorLabel" jhiTranslate="ayogatewayApp.distributor.home.createOrEditLabel">Create or edit a Distributor</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!distributor.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="distributor.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.idDistributor" for="field_idDistributor">Id Distributor</label>
+            <input type="number" class="form-control" name="idDistributor" id="field_idDistributor"
+                [(ngModel)]="distributor.idDistributor"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.nama" for="field_nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="field_nama"
+                [(ngModel)]="distributor.nama"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                [(ngModel)]="distributor.status"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.kodeId" for="field_kodeId">Kode Id</label>
+            <input type="text" class="form-control" name="kodeId" id="field_kodeId"
+                [(ngModel)]="distributor.kodeId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.pin" for="field_pin">Pin</label>
+            <input type="text" class="form-control" name="pin" id="field_pin"
+                [(ngModel)]="distributor.pin"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.com" for="field_com">Com</label>
+            <input type="text" class="form-control" name="com" id="field_com"
+                [(ngModel)]="distributor.com"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.noKontak" for="field_noKontak">No Kontak</label>
+            <input type="text" class="form-control" name="noKontak" id="field_noKontak"
+                [(ngModel)]="distributor.noKontak"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.metode" for="field_metode">Metode</label>
+            <input type="text" class="form-control" name="metode" id="field_metode"
+                [(ngModel)]="distributor.metode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.kodeParsing" for="field_kodeParsing">Kode Parsing</label>
+            <input type="text" class="form-control" name="kodeParsing" id="field_kodeParsing"
+                [(ngModel)]="distributor.kodeParsing"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.kodeParsing2" for="field_kodeParsing2">Kode Parsing 2</label>
+            <input type="text" class="form-control" name="kodeParsing2" id="field_kodeParsing2"
+                [(ngModel)]="distributor.kodeParsing2"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.replyno" for="field_replyno">Replyno</label>
+            <input type="text" class="form-control" name="replyno" id="field_replyno"
+                [(ngModel)]="distributor.replyno"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.tglInput" for="field_tglInput">Tgl Input</label>
+            <div class="d-flex">
+                <input id="field_tglInput" type="datetime-local" class="form-control" name="tglInput" [(ngModel)]="distributor.tglInput"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.userInput" for="field_userInput">User Input</label>
+            <input type="text" class="form-control" name="userInput" id="field_userInput"
+                [(ngModel)]="distributor.userInput"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.tglUpdate" for="field_tglUpdate">Tgl Update</label>
+            <div class="d-flex">
+                <input id="field_tglUpdate" type="datetime-local" class="form-control" name="tglUpdate" [(ngModel)]="distributor.tglUpdate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.userUpdate" for="field_userUpdate">User Update</label>
+            <input type="text" class="form-control" name="userUpdate" id="field_userUpdate"
+                [(ngModel)]="distributor.userUpdate"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.ip" for="field_ip">Ip</label>
+            <input type="text" class="form-control" name="ip" id="field_ip"
+                [(ngModel)]="distributor.ip"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.isvre" for="field_isvre">Isvre</label>
+            <input type="number" class="form-control" name="isvre" id="field_isvre"
+                [(ngModel)]="distributor.isvre"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.isgtw" for="field_isgtw">Isgtw</label>
+            <input type="number" class="form-control" name="isgtw" id="field_isgtw"
+                [(ngModel)]="distributor.isgtw"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.ugtw" for="field_ugtw">Ugtw</label>
+            <input type="text" class="form-control" name="ugtw" id="field_ugtw"
+                [(ngModel)]="distributor.ugtw"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.isfilter" for="field_isfilter">Isfilter</label>
+            <input type="number" class="form-control" name="isfilter" id="field_isfilter"
+                [(ngModel)]="distributor.isfilter"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.parseSaldo" for="field_parseSaldo">Parse Saldo</label>
+            <input type="text" class="form-control" name="parseSaldo" id="field_parseSaldo"
+                [(ngModel)]="distributor.parseSaldo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.parseHarga" for="field_parseHarga">Parse Harga</label>
+            <input type="text" class="form-control" name="parseHarga" id="field_parseHarga"
+                [(ngModel)]="distributor.parseHarga"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.tiketWrap" for="field_tiketWrap">Tiket Wrap</label>
+            <input type="text" class="form-control" name="tiketWrap" id="field_tiketWrap"
+                [(ngModel)]="distributor.tiketWrap"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.istiketsend" for="field_istiketsend">Istiketsend</label>
+            <input type="number" class="form-control" name="istiketsend" id="field_istiketsend"
+                [(ngModel)]="distributor.istiketsend"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.pesanTiket" for="field_pesanTiket">Pesan Tiket</label>
+            <input type="text" class="form-control" name="pesanTiket" id="field_pesanTiket"
+                [(ngModel)]="distributor.pesanTiket"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.saldoSupwarn" for="field_saldoSupwarn">Saldo Supwarn</label>
+            <input type="number" class="form-control" name="saldoSupwarn" id="field_saldoSupwarn"
+                [(ngModel)]="distributor.saldoSupwarn"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.issortby" for="field_issortby">Issortby</label>
+            <input type="number" class="form-control" name="issortby" id="field_issortby"
+                [(ngModel)]="distributor.issortby"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.parseUnit" for="field_parseUnit">Parse Unit</label>
+            <input type="text" class="form-control" name="parseUnit" id="field_parseUnit"
+                [(ngModel)]="distributor.parseUnit"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.isulangim" for="field_isulangim">Isulangim</label>
+            <input type="number" class="form-control" name="isulangim" id="field_isulangim"
+                [(ngModel)]="distributor.isulangim"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.ishlr" for="field_ishlr">Ishlr</label>
+            <input type="number" class="form-control" name="ishlr" id="field_ishlr"
+                [(ngModel)]="distributor.ishlr"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.kodeParsing3" for="field_kodeParsing3">Kode Parsing 3</label>
+            <input type="text" class="form-control" name="kodeParsing3" id="field_kodeParsing3"
+                [(ngModel)]="distributor.kodeParsing3"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.idHistory" for="field_idHistory">Id History</label>
+            <input type="number" class="form-control" name="idHistory" id="field_idHistory"
+                [(ngModel)]="distributor.idHistory"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.kodeParsing4" for="field_kodeParsing4">Kode Parsing 4</label>
+            <input type="text" class="form-control" name="kodeParsing4" id="field_kodeParsing4"
+                [(ngModel)]="distributor.kodeParsing4"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.selisihSupwarn" for="field_selisihSupwarn">Selisih Supwarn</label>
+            <input type="number" class="form-control" name="selisihSupwarn" id="field_selisihSupwarn"
+                [(ngModel)]="distributor.selisihSupwarn"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.timeon" for="field_timeon">Timeon</label>
+            <input type="text" class="form-control" name="timeon" id="field_timeon"
+                [(ngModel)]="distributor.timeon"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.distributor.timeoff" for="field_timeoff">Timeoff</label>
+            <input type="text" class="form-control" name="timeoff" id="field_timeoff"
+                [(ngModel)]="distributor.timeoff"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+{
+    "ayogatewayApp": {
+        "smsHistory" : {
+            "home": {
+                "title": "Sms Histories",
+                "createLabel": "Buat Sms History baru",
+                "createOrEditLabel": "Buat atau edit Sms History",
+                "search": "Cari Sms History"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Sms History {{ id }}?"
+            },
+            "detail": {
+                "title": "Sms History"
+            },
+            "tglInput": "Tgl Input",
+            "noHp": "No Hp",
+            "nama": "Nama",
+            "pesan": "Pesan",
+            "tipe": "Tipe",
+            "tglSms": "Tgl Sms",
+            "com": "Com",
+            "report": "Report",
+            "trx": "Trx",
+            "posting": "Posting",
+            "ref": "Ref",
+            "msisdn": "Msisdn",
+            "enginename": "Enginename",
+            "ip": "Ip",
+            "typemsg": "Typemsg",
+            "idMember": "Id Member"
+        }
+    },
+    "ayoappApp": {
+        "smsHistory" : {
+            "created": "Sms History dengan id {{ param }} telah dibuat",
+            "updated": "Sms History dengan id {{ param }} telah diperbaharui",
+            "deleted": "Sms History dengan id {{ param }} telah dihapus"
+        }
+    }
+}

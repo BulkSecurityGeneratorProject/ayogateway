@@ -1,0 +1,100 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.transaksi.home.title">Transaksis</span>
+        <button class="btn btn-primary float-right jh-create-entity create-transaksi" [routerLink]="['/', { outlets: { popup: ['transaksi-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.transaksi.home.createLabel">
+            Create new Transaksi
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.transaksi.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="transaksis">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglTransaksi"><span jhiTranslate="ayogatewayApp.transaksi.tglTransaksi">Tgl Transaksi</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMember"><span jhiTranslate="ayogatewayApp.transaksi.idMember">Id Member</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nama"><span jhiTranslate="ayogatewayApp.transaksi.nama">Nama</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="jml"><span jhiTranslate="ayogatewayApp.transaksi.jml">Jml</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeTrx"><span jhiTranslate="ayogatewayApp.transaksi.kodeTrx">Kode Trx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span jhiTranslate="ayogatewayApp.transaksi.status">Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="saldoAwal"><span jhiTranslate="ayogatewayApp.transaksi.saldoAwal">Saldo Awal</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="saldoAkhir"><span jhiTranslate="ayogatewayApp.transaksi.saldoAkhir">Saldo Akhir</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ket"><span jhiTranslate="ayogatewayApp.transaksi.ket">Ket</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglInput"><span jhiTranslate="ayogatewayApp.transaksi.tglInput">Tgl Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userInput"><span jhiTranslate="ayogatewayApp.transaksi.userInput">User Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isstok"><span jhiTranslate="ayogatewayApp.transaksi.isstok">Isstok</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transaksi of transaksis ;trackBy: trackId">
+                <td><a [routerLink]="['../transaksi', transaksi.id ]">{{transaksi.id}}</a></td>
+                <td>{{transaksi.tglTransaksi | date:'medium'}}</td>
+                <td>{{transaksi.idMember}}</td>
+                <td>{{transaksi.nama}}</td>
+                <td>{{transaksi.jml}}</td>
+                <td>{{transaksi.kodeTrx}}</td>
+                <td>{{transaksi.status}}</td>
+                <td>{{transaksi.saldoAwal}}</td>
+                <td>{{transaksi.saldoAkhir}}</td>
+                <td>{{transaksi.ket}}</td>
+                <td>{{transaksi.tglInput | date:'medium'}}</td>
+                <td>{{transaksi.userInput}}</td>
+                <td>{{transaksi.isstok}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../transaksi', transaksi.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'transaksi/'+ transaksi.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'transaksi/'+ transaksi.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="transaksis && transaksis.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

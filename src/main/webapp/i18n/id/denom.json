@@ -1,0 +1,26 @@
+{
+    "ayogatewayApp": {
+        "denom" : {
+            "home": {
+                "title": "Denoms",
+                "createLabel": "Buat Denom baru",
+                "createOrEditLabel": "Buat atau edit Denom",
+                "search": "Cari Denom"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Denom {{ id }}?"
+            },
+            "detail": {
+                "title": "Denom"
+            },
+            "jmlDenom": "Jml Denom"
+        }
+    },
+    "ayoappApp": {
+        "denom" : {
+            "created": "Denom dengan id {{ param }} telah dibuat",
+            "updated": "Denom dengan id {{ param }} telah diperbaharui",
+            "deleted": "Denom dengan id {{ param }} telah dihapus"
+        }
+    }
+}

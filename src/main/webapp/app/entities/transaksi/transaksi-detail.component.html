@@ -1,0 +1,69 @@
+
+<div *ngIf="transaksi">
+    <h2><span jhiTranslate="ayogatewayApp.transaksi.detail.title">Transaksi</span> {{transaksi.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.tglTransaksi">Tgl Transaksi</span></dt>
+        <dd>
+            <span>{{transaksi.tglTransaksi | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{transaksi.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.nama">Nama</span></dt>
+        <dd>
+            <span>{{transaksi.nama}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.jml">Jml</span></dt>
+        <dd>
+            <span>{{transaksi.jml}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.kodeTrx">Kode Trx</span></dt>
+        <dd>
+            <span>{{transaksi.kodeTrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.status">Status</span></dt>
+        <dd>
+            <span>{{transaksi.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.saldoAwal">Saldo Awal</span></dt>
+        <dd>
+            <span>{{transaksi.saldoAwal}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.saldoAkhir">Saldo Akhir</span></dt>
+        <dd>
+            <span>{{transaksi.saldoAkhir}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.ket">Ket</span></dt>
+        <dd>
+            <span>{{transaksi.ket}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.tglInput">Tgl Input</span></dt>
+        <dd>
+            <span>{{transaksi.tglInput | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.userInput">User Input</span></dt>
+        <dd>
+            <span>{{transaksi.userInput}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.transaksi.isstok">Isstok</span></dt>
+        <dd>
+            <span>{{transaksi.isstok}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'transaksi/'+ transaksi.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,33 @@
+{
+    "ayogatewayApp": {
+        "rebate" : {
+            "home": {
+                "title": "Rebates",
+                "createLabel": "Create a new Rebate",
+                "createOrEditLabel": "Create or edit a Rebate",
+                "search": "Search for Rebate"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Rebate {{ id }}?"
+            },
+            "detail": {
+                "title": "Rebate"
+            },
+            "idTransaksi": "Id Transaksi",
+            "jml": "Jml",
+            "hargaProduk": "Harga Produk",
+            "idMember": "Id Member",
+            "level": "Level",
+            "bulan": "Bulan",
+            "tahun": "Tahun",
+            "status": "Status"
+        }
+    },
+    "ayoappApp": {
+        "rebate" : {
+            "created": "A new Rebate is created with identifier {{ param }}",
+            "updated": "A Rebate is updated with identifier {{ param }}",
+            "deleted": "A Rebate is deleted with identifier {{ param }}"
+        }
+    }
+}

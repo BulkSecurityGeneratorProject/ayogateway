@@ -1,0 +1,32 @@
+{
+    "ayogatewayApp": {
+        "harga" : {
+            "home": {
+                "title": "Hargas",
+                "createLabel": "Create a new Harga",
+                "createOrEditLabel": "Create or edit a Harga",
+                "search": "Search for Harga"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Harga {{ id }}?"
+            },
+            "detail": {
+                "title": "Harga"
+            },
+            "idHarga": "Id Harga",
+            "idProduk": "Id Produk",
+            "idMember": "Id Member",
+            "hargaJual": "Harga Jual",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "hargaBefore": "Harga Before"
+        }
+    },
+    "ayoappApp": {
+        "harga" : {
+            "created": "A new Harga is created with identifier {{ param }}",
+            "updated": "A Harga is updated with identifier {{ param }}",
+            "deleted": "A Harga is deleted with identifier {{ param }}"
+        }
+    }
+}

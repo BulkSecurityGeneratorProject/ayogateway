@@ -1,0 +1,27 @@
+{
+    "ayogatewayApp": {
+        "operator" : {
+            "home": {
+                "title": "Operators",
+                "createLabel": "Buat Operator baru",
+                "createOrEditLabel": "Buat atau edit Operator",
+                "search": "Cari Operator"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Operator {{ id }}?"
+            },
+            "detail": {
+                "title": "Operator"
+            },
+            "idOperator": "Id Operator",
+            "nama": "Nama"
+        }
+    },
+    "ayoappApp": {
+        "operator" : {
+            "created": "Operator dengan id {{ param }} telah dibuat",
+            "updated": "Operator dengan id {{ param }} telah diperbaharui",
+            "deleted": "Operator dengan id {{ param }} telah dihapus"
+        }
+    }
+}

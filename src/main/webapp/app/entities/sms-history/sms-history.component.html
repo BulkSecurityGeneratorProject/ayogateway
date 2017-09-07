@@ -1,0 +1,108 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.smsHistory.home.title">Sms Histories</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sms-history" [routerLink]="['/', { outlets: { popup: ['sms-history-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.smsHistory.home.createLabel">
+            Create new Sms History
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.smsHistory.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="smsHistories">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglInput"><span jhiTranslate="ayogatewayApp.smsHistory.tglInput">Tgl Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="noHp"><span jhiTranslate="ayogatewayApp.smsHistory.noHp">No Hp</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nama"><span jhiTranslate="ayogatewayApp.smsHistory.nama">Nama</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pesan"><span jhiTranslate="ayogatewayApp.smsHistory.pesan">Pesan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tipe"><span jhiTranslate="ayogatewayApp.smsHistory.tipe">Tipe</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglSms"><span jhiTranslate="ayogatewayApp.smsHistory.tglSms">Tgl Sms</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="com"><span jhiTranslate="ayogatewayApp.smsHistory.com">Com</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="report"><span jhiTranslate="ayogatewayApp.smsHistory.report">Report</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="trx"><span jhiTranslate="ayogatewayApp.smsHistory.trx">Trx</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="posting"><span jhiTranslate="ayogatewayApp.smsHistory.posting">Posting</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ref"><span jhiTranslate="ayogatewayApp.smsHistory.ref">Ref</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="msisdn"><span jhiTranslate="ayogatewayApp.smsHistory.msisdn">Msisdn</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="enginename"><span jhiTranslate="ayogatewayApp.smsHistory.enginename">Enginename</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ip"><span jhiTranslate="ayogatewayApp.smsHistory.ip">Ip</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="typemsg"><span jhiTranslate="ayogatewayApp.smsHistory.typemsg">Typemsg</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMember"><span jhiTranslate="ayogatewayApp.smsHistory.idMember">Id Member</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let smsHistory of smsHistories ;trackBy: trackId">
+                <td><a [routerLink]="['../sms-history', smsHistory.id ]">{{smsHistory.id}}</a></td>
+                <td>{{smsHistory.tglInput | date:'medium'}}</td>
+                <td>{{smsHistory.noHp}}</td>
+                <td>{{smsHistory.nama}}</td>
+                <td>{{smsHistory.pesan}}</td>
+                <td>{{smsHistory.tipe}}</td>
+                <td>{{smsHistory.tglSms | date:'medium'}}</td>
+                <td>{{smsHistory.com}}</td>
+                <td>{{smsHistory.report}}</td>
+                <td>{{smsHistory.trx}}</td>
+                <td>{{smsHistory.posting}}</td>
+                <td>{{smsHistory.ref}}</td>
+                <td>{{smsHistory.msisdn}}</td>
+                <td>{{smsHistory.enginename}}</td>
+                <td>{{smsHistory.ip}}</td>
+                <td>{{smsHistory.typemsg}}</td>
+                <td>{{smsHistory.idMember}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sms-history', smsHistory.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sms-history/'+ smsHistory.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sms-history/'+ smsHistory.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="smsHistories && smsHistories.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

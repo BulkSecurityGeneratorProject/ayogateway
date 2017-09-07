@@ -1,0 +1,30 @@
+{
+    "ayogatewayApp": {
+        "kartu" : {
+            "home": {
+                "title": "Kartus",
+                "createLabel": "Create a new Kartu",
+                "createOrEditLabel": "Create or edit a Kartu",
+                "search": "Search for Kartu"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Kartu {{ id }}?"
+            },
+            "detail": {
+                "title": "Kartu"
+            },
+            "idKartu": "Id Kartu",
+            "nama": "Nama",
+            "idOperator": "Id Operator",
+            "cekHlr": "Cek Hlr",
+            "ketkartu": "Ketkartu"
+        }
+    },
+    "ayoappApp": {
+        "kartu" : {
+            "created": "A new Kartu is created with identifier {{ param }}",
+            "updated": "A Kartu is updated with identifier {{ param }}",
+            "deleted": "A Kartu is deleted with identifier {{ param }}"
+        }
+    }
+}

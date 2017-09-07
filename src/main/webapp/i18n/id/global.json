@@ -9,6 +9,18 @@
                 "main": "Entities",
                 "member": "Member",
                 "memberHp": "Member Hp",
+                "denom": "Denom",
+                "distributor": "Distributor",
+                "harga": "Harga",
+                "kartu": "Kartu",
+                "koneksi": "Koneksi",
+                "levelMember": "Level Member",
+                "logSaldo": "Log Saldo",
+                "operator": "Operator",
+                "produk": "Produk",
+                "rebate": "Rebate",
+                "smsHistory": "Sms History",
+                "transaksi": "Transaksi",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

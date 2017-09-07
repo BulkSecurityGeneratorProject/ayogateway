@@ -1,0 +1,65 @@
+
+<div *ngIf="logSaldo">
+    <h2><span jhiTranslate="ayogatewayApp.logSaldo.detail.title">Log Saldo</span> {{logSaldo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{logSaldo.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.saldo">Saldo</span></dt>
+        <dd>
+            <span>{{logSaldo.saldo}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.act">Act</span></dt>
+        <dd>
+            <span>{{logSaldo.act}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.tgl">Tgl</span></dt>
+        <dd>
+            <span>{{logSaldo.tgl | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.ket">Ket</span></dt>
+        <dd>
+            <span>{{logSaldo.ket}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.ref">Ref</span></dt>
+        <dd>
+            <span>{{logSaldo.ref}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.tkode">Tkode</span></dt>
+        <dd>
+            <span>{{logSaldo.tkode}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.kodetrx">Kodetrx</span></dt>
+        <dd>
+            <span>{{logSaldo.kodetrx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.msg">Msg</span></dt>
+        <dd>
+            <span>{{logSaldo.msg}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.userInput">User Input</span></dt>
+        <dd>
+            <span>{{logSaldo.userInput}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.logSaldo.isstok">Isstok</span></dt>
+        <dd>
+            <span>{{logSaldo.isstok}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'log-saldo/'+ logSaldo.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,61 @@
+{
+    "ayogatewayApp": {
+        "distributor" : {
+            "home": {
+                "title": "Distributors",
+                "createLabel": "Buat Distributor baru",
+                "createOrEditLabel": "Buat atau edit Distributor",
+                "search": "Cari Distributor"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Distributor {{ id }}?"
+            },
+            "detail": {
+                "title": "Distributor"
+            },
+            "idDistributor": "Id Distributor",
+            "nama": "Nama",
+            "status": "Status",
+            "kodeId": "Kode Id",
+            "pin": "Pin",
+            "com": "Com",
+            "noKontak": "No Kontak",
+            "metode": "Metode",
+            "kodeParsing": "Kode Parsing",
+            "kodeParsing2": "Kode Parsing 2",
+            "replyno": "Replyno",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "tglUpdate": "Tgl Update",
+            "userUpdate": "User Update",
+            "ip": "Ip",
+            "isvre": "Isvre",
+            "isgtw": "Isgtw",
+            "ugtw": "Ugtw",
+            "isfilter": "Isfilter",
+            "parseSaldo": "Parse Saldo",
+            "parseHarga": "Parse Harga",
+            "tiketWrap": "Tiket Wrap",
+            "istiketsend": "Istiketsend",
+            "pesanTiket": "Pesan Tiket",
+            "saldoSupwarn": "Saldo Supwarn",
+            "issortby": "Issortby",
+            "parseUnit": "Parse Unit",
+            "isulangim": "Isulangim",
+            "ishlr": "Ishlr",
+            "kodeParsing3": "Kode Parsing 3",
+            "idHistory": "Id History",
+            "kodeParsing4": "Kode Parsing 4",
+            "selisihSupwarn": "Selisih Supwarn",
+            "timeon": "Timeon",
+            "timeoff": "Timeoff"
+        }
+    },
+    "ayoappApp": {
+        "distributor" : {
+            "created": "Distributor dengan id {{ param }} telah dibuat",
+            "updated": "Distributor dengan id {{ param }} telah diperbaharui",
+            "deleted": "Distributor dengan id {{ param }} telah dihapus"
+        }
+    }
+}

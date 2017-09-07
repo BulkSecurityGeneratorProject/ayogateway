@@ -1,0 +1,85 @@
+
+<div *ngIf="smsHistory">
+    <h2><span jhiTranslate="ayogatewayApp.smsHistory.detail.title">Sms History</span> {{smsHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.tglInput">Tgl Input</span></dt>
+        <dd>
+            <span>{{smsHistory.tglInput | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.noHp">No Hp</span></dt>
+        <dd>
+            <span>{{smsHistory.noHp}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.nama">Nama</span></dt>
+        <dd>
+            <span>{{smsHistory.nama}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.pesan">Pesan</span></dt>
+        <dd>
+            <span>{{smsHistory.pesan}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.tipe">Tipe</span></dt>
+        <dd>
+            <span>{{smsHistory.tipe}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.tglSms">Tgl Sms</span></dt>
+        <dd>
+            <span>{{smsHistory.tglSms | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.com">Com</span></dt>
+        <dd>
+            <span>{{smsHistory.com}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.report">Report</span></dt>
+        <dd>
+            <span>{{smsHistory.report}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.trx">Trx</span></dt>
+        <dd>
+            <span>{{smsHistory.trx}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.posting">Posting</span></dt>
+        <dd>
+            <span>{{smsHistory.posting}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.ref">Ref</span></dt>
+        <dd>
+            <span>{{smsHistory.ref}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.msisdn">Msisdn</span></dt>
+        <dd>
+            <span>{{smsHistory.msisdn}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.enginename">Enginename</span></dt>
+        <dd>
+            <span>{{smsHistory.enginename}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.ip">Ip</span></dt>
+        <dd>
+            <span>{{smsHistory.ip}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.typemsg">Typemsg</span></dt>
+        <dd>
+            <span>{{smsHistory.typemsg}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.smsHistory.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{smsHistory.idMember}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sms-history/'+ smsHistory.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

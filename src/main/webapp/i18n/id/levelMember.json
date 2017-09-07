@@ -1,0 +1,27 @@
+{
+    "ayogatewayApp": {
+        "levelMember" : {
+            "home": {
+                "title": "Level Members",
+                "createLabel": "Buat Level Member baru",
+                "createOrEditLabel": "Buat atau edit Level Member",
+                "search": "Cari Level Member"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Level Member {{ id }}?"
+            },
+            "detail": {
+                "title": "Level Member"
+            },
+            "kodeLevel": "Kode Level",
+            "nama": "Nama"
+        }
+    },
+    "ayoappApp": {
+        "levelMember" : {
+            "created": "Level Member dengan id {{ param }} telah dibuat",
+            "updated": "Level Member dengan id {{ param }} telah diperbaharui",
+            "deleted": "Level Member dengan id {{ param }} telah dihapus"
+        }
+    }
+}

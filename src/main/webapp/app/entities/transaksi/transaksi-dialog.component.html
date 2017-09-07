@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTransaksiLabel" jhiTranslate="ayogatewayApp.transaksi.home.createOrEditLabel">Create or edit a Transaksi</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!transaksi.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="transaksi.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.tglTransaksi" for="field_tglTransaksi">Tgl Transaksi</label>
+            <div class="d-flex">
+                <input id="field_tglTransaksi" type="datetime-local" class="form-control" name="tglTransaksi" [(ngModel)]="transaksi.tglTransaksi"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.idMember" for="field_idMember">Id Member</label>
+            <input type="text" class="form-control" name="idMember" id="field_idMember"
+                [(ngModel)]="transaksi.idMember"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.nama" for="field_nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="field_nama"
+                [(ngModel)]="transaksi.nama"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.jml" for="field_jml">Jml</label>
+            <input type="number" class="form-control" name="jml" id="field_jml"
+                [(ngModel)]="transaksi.jml"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.kodeTrx" for="field_kodeTrx">Kode Trx</label>
+            <input type="number" class="form-control" name="kodeTrx" id="field_kodeTrx"
+                [(ngModel)]="transaksi.kodeTrx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                [(ngModel)]="transaksi.status"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.saldoAwal" for="field_saldoAwal">Saldo Awal</label>
+            <input type="number" class="form-control" name="saldoAwal" id="field_saldoAwal"
+                [(ngModel)]="transaksi.saldoAwal"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.saldoAkhir" for="field_saldoAkhir">Saldo Akhir</label>
+            <input type="number" class="form-control" name="saldoAkhir" id="field_saldoAkhir"
+                [(ngModel)]="transaksi.saldoAkhir"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.ket" for="field_ket">Ket</label>
+            <input type="text" class="form-control" name="ket" id="field_ket"
+                [(ngModel)]="transaksi.ket"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.tglInput" for="field_tglInput">Tgl Input</label>
+            <div class="d-flex">
+                <input id="field_tglInput" type="datetime-local" class="form-control" name="tglInput" [(ngModel)]="transaksi.tglInput"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.userInput" for="field_userInput">User Input</label>
+            <input type="text" class="form-control" name="userInput" id="field_userInput"
+                [(ngModel)]="transaksi.userInput"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.transaksi.isstok" for="field_isstok">Isstok</label>
+            <input type="number" class="form-control" name="isstok" id="field_isstok"
+                [(ngModel)]="transaksi.isstok"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

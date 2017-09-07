@@ -1,0 +1,27 @@
+{
+    "ayogatewayApp": {
+        "operator" : {
+            "home": {
+                "title": "Operators",
+                "createLabel": "Create a new Operator",
+                "createOrEditLabel": "Create or edit a Operator",
+                "search": "Search for Operator"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Operator {{ id }}?"
+            },
+            "detail": {
+                "title": "Operator"
+            },
+            "idOperator": "Id Operator",
+            "nama": "Nama"
+        }
+    },
+    "ayoappApp": {
+        "operator" : {
+            "created": "A new Operator is created with identifier {{ param }}",
+            "updated": "A Operator is updated with identifier {{ param }}",
+            "deleted": "A Operator is deleted with identifier {{ param }}"
+        }
+    }
+}

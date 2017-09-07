@@ -1,0 +1,165 @@
+
+<div *ngIf="distributor">
+    <h2><span jhiTranslate="ayogatewayApp.distributor.detail.title">Distributor</span> {{distributor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.distributor.idDistributor">Id Distributor</span></dt>
+        <dd>
+            <span>{{distributor.idDistributor}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.nama">Nama</span></dt>
+        <dd>
+            <span>{{distributor.nama}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.status">Status</span></dt>
+        <dd>
+            <span>{{distributor.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.kodeId">Kode Id</span></dt>
+        <dd>
+            <span>{{distributor.kodeId}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.pin">Pin</span></dt>
+        <dd>
+            <span>{{distributor.pin}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.com">Com</span></dt>
+        <dd>
+            <span>{{distributor.com}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.noKontak">No Kontak</span></dt>
+        <dd>
+            <span>{{distributor.noKontak}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.metode">Metode</span></dt>
+        <dd>
+            <span>{{distributor.metode}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.kodeParsing">Kode Parsing</span></dt>
+        <dd>
+            <span>{{distributor.kodeParsing}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.kodeParsing2">Kode Parsing 2</span></dt>
+        <dd>
+            <span>{{distributor.kodeParsing2}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.replyno">Replyno</span></dt>
+        <dd>
+            <span>{{distributor.replyno}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.tglInput">Tgl Input</span></dt>
+        <dd>
+            <span>{{distributor.tglInput | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.userInput">User Input</span></dt>
+        <dd>
+            <span>{{distributor.userInput}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.tglUpdate">Tgl Update</span></dt>
+        <dd>
+            <span>{{distributor.tglUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.userUpdate">User Update</span></dt>
+        <dd>
+            <span>{{distributor.userUpdate}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.ip">Ip</span></dt>
+        <dd>
+            <span>{{distributor.ip}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.isvre">Isvre</span></dt>
+        <dd>
+            <span>{{distributor.isvre}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.isgtw">Isgtw</span></dt>
+        <dd>
+            <span>{{distributor.isgtw}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.ugtw">Ugtw</span></dt>
+        <dd>
+            <span>{{distributor.ugtw}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.isfilter">Isfilter</span></dt>
+        <dd>
+            <span>{{distributor.isfilter}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.parseSaldo">Parse Saldo</span></dt>
+        <dd>
+            <span>{{distributor.parseSaldo}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.parseHarga">Parse Harga</span></dt>
+        <dd>
+            <span>{{distributor.parseHarga}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.tiketWrap">Tiket Wrap</span></dt>
+        <dd>
+            <span>{{distributor.tiketWrap}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.istiketsend">Istiketsend</span></dt>
+        <dd>
+            <span>{{distributor.istiketsend}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.pesanTiket">Pesan Tiket</span></dt>
+        <dd>
+            <span>{{distributor.pesanTiket}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.saldoSupwarn">Saldo Supwarn</span></dt>
+        <dd>
+            <span>{{distributor.saldoSupwarn}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.issortby">Issortby</span></dt>
+        <dd>
+            <span>{{distributor.issortby}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.parseUnit">Parse Unit</span></dt>
+        <dd>
+            <span>{{distributor.parseUnit}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.isulangim">Isulangim</span></dt>
+        <dd>
+            <span>{{distributor.isulangim}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.ishlr">Ishlr</span></dt>
+        <dd>
+            <span>{{distributor.ishlr}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.kodeParsing3">Kode Parsing 3</span></dt>
+        <dd>
+            <span>{{distributor.kodeParsing3}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.idHistory">Id History</span></dt>
+        <dd>
+            <span>{{distributor.idHistory}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.kodeParsing4">Kode Parsing 4</span></dt>
+        <dd>
+            <span>{{distributor.kodeParsing4}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.selisihSupwarn">Selisih Supwarn</span></dt>
+        <dd>
+            <span>{{distributor.selisihSupwarn}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.timeon">Timeon</span></dt>
+        <dd>
+            <span>{{distributor.timeon}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.distributor.timeoff">Timeoff</span></dt>
+        <dd>
+            <span>{{distributor.timeoff}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'distributor/'+ distributor.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

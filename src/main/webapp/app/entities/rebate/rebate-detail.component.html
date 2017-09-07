@@ -1,0 +1,53 @@
+
+<div *ngIf="rebate">
+    <h2><span jhiTranslate="ayogatewayApp.rebate.detail.title">Rebate</span> {{rebate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.rebate.idTransaksi">Id Transaksi</span></dt>
+        <dd>
+            <span>{{rebate.idTransaksi}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.jml">Jml</span></dt>
+        <dd>
+            <span>{{rebate.jml}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.hargaProduk">Harga Produk</span></dt>
+        <dd>
+            <span>{{rebate.hargaProduk}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.idMember">Id Member</span></dt>
+        <dd>
+            <span>{{rebate.idMember}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.level">Level</span></dt>
+        <dd>
+            <span>{{rebate.level}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.bulan">Bulan</span></dt>
+        <dd>
+            <span>{{rebate.bulan}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.tahun">Tahun</span></dt>
+        <dd>
+            <span>{{rebate.tahun}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.rebate.status">Status</span></dt>
+        <dd>
+            <span>{{rebate.status}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rebate/'+ rebate.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

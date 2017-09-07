@@ -1,0 +1,109 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySmsHistoryLabel" jhiTranslate="ayogatewayApp.smsHistory.home.createOrEditLabel">Create or edit a Sms History</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!smsHistory.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="smsHistory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.tglInput" for="field_tglInput">Tgl Input</label>
+            <div class="d-flex">
+                <input id="field_tglInput" type="datetime-local" class="form-control" name="tglInput" [(ngModel)]="smsHistory.tglInput"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.noHp" for="field_noHp">No Hp</label>
+            <input type="text" class="form-control" name="noHp" id="field_noHp"
+                [(ngModel)]="smsHistory.noHp"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.nama" for="field_nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="field_nama"
+                [(ngModel)]="smsHistory.nama"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.pesan" for="field_pesan">Pesan</label>
+            <input type="text" class="form-control" name="pesan" id="field_pesan"
+                [(ngModel)]="smsHistory.pesan"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.tipe" for="field_tipe">Tipe</label>
+            <input type="number" class="form-control" name="tipe" id="field_tipe"
+                [(ngModel)]="smsHistory.tipe"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.tglSms" for="field_tglSms">Tgl Sms</label>
+            <div class="d-flex">
+                <input id="field_tglSms" type="datetime-local" class="form-control" name="tglSms" [(ngModel)]="smsHistory.tglSms"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.com" for="field_com">Com</label>
+            <input type="text" class="form-control" name="com" id="field_com"
+                [(ngModel)]="smsHistory.com"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.report" for="field_report">Report</label>
+            <input type="number" class="form-control" name="report" id="field_report"
+                [(ngModel)]="smsHistory.report"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.trx" for="field_trx">Trx</label>
+            <input type="number" class="form-control" name="trx" id="field_trx"
+                [(ngModel)]="smsHistory.trx"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.posting" for="field_posting">Posting</label>
+            <input type="number" class="form-control" name="posting" id="field_posting"
+                [(ngModel)]="smsHistory.posting"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.ref" for="field_ref">Ref</label>
+            <input type="text" class="form-control" name="ref" id="field_ref"
+                [(ngModel)]="smsHistory.ref"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.msisdn" for="field_msisdn">Msisdn</label>
+            <input type="text" class="form-control" name="msisdn" id="field_msisdn"
+                [(ngModel)]="smsHistory.msisdn"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.enginename" for="field_enginename">Enginename</label>
+            <input type="text" class="form-control" name="enginename" id="field_enginename"
+                [(ngModel)]="smsHistory.enginename"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.ip" for="field_ip">Ip</label>
+            <input type="text" class="form-control" name="ip" id="field_ip"
+                [(ngModel)]="smsHistory.ip"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.typemsg" for="field_typemsg">Typemsg</label>
+            <input type="number" class="form-control" name="typemsg" id="field_typemsg"
+                [(ngModel)]="smsHistory.typemsg"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.smsHistory.idMember" for="field_idMember">Id Member</label>
+            <input type="text" class="form-control" name="idMember" id="field_idMember"
+                [(ngModel)]="smsHistory.idMember"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

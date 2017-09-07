@@ -1,0 +1,32 @@
+{
+    "ayogatewayApp": {
+        "harga" : {
+            "home": {
+                "title": "Hargas",
+                "createLabel": "Buat Harga baru",
+                "createOrEditLabel": "Buat atau edit Harga",
+                "search": "Cari Harga"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Harga {{ id }}?"
+            },
+            "detail": {
+                "title": "Harga"
+            },
+            "idHarga": "Id Harga",
+            "idProduk": "Id Produk",
+            "idMember": "Id Member",
+            "hargaJual": "Harga Jual",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "hargaBefore": "Harga Before"
+        }
+    },
+    "ayoappApp": {
+        "harga" : {
+            "created": "Harga dengan id {{ param }} telah dibuat",
+            "updated": "Harga dengan id {{ param }} telah diperbaharui",
+            "deleted": "Harga dengan id {{ param }} telah dihapus"
+        }
+    }
+}

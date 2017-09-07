@@ -1,0 +1,172 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProdukLabel" jhiTranslate="ayogatewayApp.produk.home.createOrEditLabel">Create or edit a Produk</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!produk.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="produk.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.idProduk" for="field_idProduk">Id Produk</label>
+            <input type="number" class="form-control" name="idProduk" id="field_idProduk"
+                [(ngModel)]="produk.idProduk"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.kodeProduk" for="field_kodeProduk">Kode Produk</label>
+            <input type="text" class="form-control" name="kodeProduk" id="field_kodeProduk"
+                [(ngModel)]="produk.kodeProduk"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.idKartu" for="field_idKartu">Id Kartu</label>
+            <input type="number" class="form-control" name="idKartu" id="field_idKartu"
+                [(ngModel)]="produk.idKartu"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.denom" for="field_denom">Denom</label>
+            <input type="number" class="form-control" name="denom" id="field_denom"
+                [(ngModel)]="produk.denom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.hpp" for="field_hpp">Hpp</label>
+            <input type="number" class="form-control" name="hpp" id="field_hpp"
+                [(ngModel)]="produk.hpp"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.hargaMan" for="field_hargaMan">Harga Man</label>
+            <input type="number" class="form-control" name="hargaMan" id="field_hargaMan"
+                [(ngModel)]="produk.hargaMan"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                [(ngModel)]="produk.status"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.gangguan" for="field_gangguan">Gangguan</label>
+            <input type="number" class="form-control" name="gangguan" id="field_gangguan"
+                [(ngModel)]="produk.gangguan"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.idDistributor" for="field_idDistributor">Id Distributor</label>
+            <input type="number" class="form-control" name="idDistributor" id="field_idDistributor"
+                [(ngModel)]="produk.idDistributor"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.fisik" for="field_fisik">Fisik</label>
+            <input type="number" class="form-control" name="fisik" id="field_fisik"
+                [(ngModel)]="produk.fisik"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.tglUpdate" for="field_tglUpdate">Tgl Update</label>
+            <div class="d-flex">
+                <input id="field_tglUpdate" type="datetime-local" class="form-control" name="tglUpdate" [(ngModel)]="produk.tglUpdate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.userUpdate" for="field_userUpdate">User Update</label>
+            <input type="text" class="form-control" name="userUpdate" id="field_userUpdate"
+                [(ngModel)]="produk.userUpdate"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.idDistributor2" for="field_idDistributor2">Id Distributor 2</label>
+            <input type="number" class="form-control" name="idDistributor2" id="field_idDistributor2"
+                [(ngModel)]="produk.idDistributor2"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.konversiSaldo" for="field_konversiSaldo">Konversi Saldo</label>
+            <input type="number" class="form-control" name="konversiSaldo" id="field_konversiSaldo"
+                [(ngModel)]="produk.konversiSaldo"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.isreport" for="field_isreport">Isreport</label>
+            <input type="number" class="form-control" name="isreport" id="field_isreport"
+                [(ngModel)]="produk.isreport"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.issplit" for="field_issplit">Issplit</label>
+            <input type="number" class="form-control" name="issplit" id="field_issplit"
+                [(ngModel)]="produk.issplit"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.ototimeopen" for="field_ototimeopen">Ototimeopen</label>
+            <input type="text" class="form-control" name="ototimeopen" id="field_ototimeopen"
+                [(ngModel)]="produk.ototimeopen"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.ototimeclose" for="field_ototimeclose">Ototimeclose</label>
+            <input type="text" class="form-control" name="ototimeclose" id="field_ototimeclose"
+                [(ngModel)]="produk.ototimeclose"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.idDistributor3" for="field_idDistributor3">Id Distributor 3</label>
+            <input type="number" class="form-control" name="idDistributor3" id="field_idDistributor3"
+                [(ngModel)]="produk.idDistributor3"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.isstok" for="field_isstok">Isstok</label>
+            <input type="number" class="form-control" name="isstok" id="field_isstok"
+                [(ngModel)]="produk.isstok"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.otoclosestatus" for="field_otoclosestatus">Otoclosestatus</label>
+            <input type="number" class="form-control" name="otoclosestatus" id="field_otoclosestatus"
+                [(ngModel)]="produk.otoclosestatus"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.saldoMin" for="field_saldoMin">Saldo Min</label>
+            <input type="number" class="form-control" name="saldoMin" id="field_saldoMin"
+                [(ngModel)]="produk.saldoMin"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.akses" for="field_akses">Akses</label>
+            <input type="number" class="form-control" name="akses" id="field_akses"
+                [(ngModel)]="produk.akses"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.hlr" for="field_hlr">Hlr</label>
+            <input type="number" class="form-control" name="hlr" id="field_hlr"
+                [(ngModel)]="produk.hlr"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.isulang" for="field_isulang">Isulang</label>
+            <input type="number" class="form-control" name="isulang" id="field_isulang"
+                [(ngModel)]="produk.isulang"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.isurut" for="field_isurut">Isurut</label>
+            <input type="number" class="form-control" name="isurut" id="field_isurut"
+                [(ngModel)]="produk.isurut"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.formatppob" for="field_formatppob">Formatppob</label>
+            <input type="number" class="form-control" name="formatppob" id="field_formatppob"
+                [(ngModel)]="produk.formatppob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.jenisppob" for="field_jenisppob">Jenisppob</label>
+            <input type="number" class="form-control" name="jenisppob" id="field_jenisppob"
+                [(ngModel)]="produk.jenisppob"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.produk.ketproduk" for="field_ketproduk">Ketproduk</label>
+            <input type="text" class="form-control" name="ketproduk" id="field_ketproduk"
+                [(ngModel)]="produk.ketproduk"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

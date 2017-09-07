@@ -1,0 +1,148 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.distributor.home.title">Distributors</span>
+        <button class="btn btn-primary float-right jh-create-entity create-distributor" [routerLink]="['/', { outlets: { popup: ['distributor-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.distributor.home.createLabel">
+            Create new Distributor
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.distributor.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="distributors">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idDistributor"><span jhiTranslate="ayogatewayApp.distributor.idDistributor">Id Distributor</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nama"><span jhiTranslate="ayogatewayApp.distributor.nama">Nama</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span jhiTranslate="ayogatewayApp.distributor.status">Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeId"><span jhiTranslate="ayogatewayApp.distributor.kodeId">Kode Id</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pin"><span jhiTranslate="ayogatewayApp.distributor.pin">Pin</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="com"><span jhiTranslate="ayogatewayApp.distributor.com">Com</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="noKontak"><span jhiTranslate="ayogatewayApp.distributor.noKontak">No Kontak</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="metode"><span jhiTranslate="ayogatewayApp.distributor.metode">Metode</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeParsing"><span jhiTranslate="ayogatewayApp.distributor.kodeParsing">Kode Parsing</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeParsing2"><span jhiTranslate="ayogatewayApp.distributor.kodeParsing2">Kode Parsing 2</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="replyno"><span jhiTranslate="ayogatewayApp.distributor.replyno">Replyno</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglInput"><span jhiTranslate="ayogatewayApp.distributor.tglInput">Tgl Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userInput"><span jhiTranslate="ayogatewayApp.distributor.userInput">User Input</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tglUpdate"><span jhiTranslate="ayogatewayApp.distributor.tglUpdate">Tgl Update</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userUpdate"><span jhiTranslate="ayogatewayApp.distributor.userUpdate">User Update</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ip"><span jhiTranslate="ayogatewayApp.distributor.ip">Ip</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isvre"><span jhiTranslate="ayogatewayApp.distributor.isvre">Isvre</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isgtw"><span jhiTranslate="ayogatewayApp.distributor.isgtw">Isgtw</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ugtw"><span jhiTranslate="ayogatewayApp.distributor.ugtw">Ugtw</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isfilter"><span jhiTranslate="ayogatewayApp.distributor.isfilter">Isfilter</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="parseSaldo"><span jhiTranslate="ayogatewayApp.distributor.parseSaldo">Parse Saldo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="parseHarga"><span jhiTranslate="ayogatewayApp.distributor.parseHarga">Parse Harga</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tiketWrap"><span jhiTranslate="ayogatewayApp.distributor.tiketWrap">Tiket Wrap</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="istiketsend"><span jhiTranslate="ayogatewayApp.distributor.istiketsend">Istiketsend</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="pesanTiket"><span jhiTranslate="ayogatewayApp.distributor.pesanTiket">Pesan Tiket</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="saldoSupwarn"><span jhiTranslate="ayogatewayApp.distributor.saldoSupwarn">Saldo Supwarn</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="issortby"><span jhiTranslate="ayogatewayApp.distributor.issortby">Issortby</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="parseUnit"><span jhiTranslate="ayogatewayApp.distributor.parseUnit">Parse Unit</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="isulangim"><span jhiTranslate="ayogatewayApp.distributor.isulangim">Isulangim</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ishlr"><span jhiTranslate="ayogatewayApp.distributor.ishlr">Ishlr</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeParsing3"><span jhiTranslate="ayogatewayApp.distributor.kodeParsing3">Kode Parsing 3</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idHistory"><span jhiTranslate="ayogatewayApp.distributor.idHistory">Id History</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="kodeParsing4"><span jhiTranslate="ayogatewayApp.distributor.kodeParsing4">Kode Parsing 4</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="selisihSupwarn"><span jhiTranslate="ayogatewayApp.distributor.selisihSupwarn">Selisih Supwarn</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="timeon"><span jhiTranslate="ayogatewayApp.distributor.timeon">Timeon</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="timeoff"><span jhiTranslate="ayogatewayApp.distributor.timeoff">Timeoff</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let distributor of distributors ;trackBy: trackId">
+                <td><a [routerLink]="['../distributor', distributor.id ]">{{distributor.id}}</a></td>
+                <td>{{distributor.idDistributor}}</td>
+                <td>{{distributor.nama}}</td>
+                <td>{{distributor.status}}</td>
+                <td>{{distributor.kodeId}}</td>
+                <td>{{distributor.pin}}</td>
+                <td>{{distributor.com}}</td>
+                <td>{{distributor.noKontak}}</td>
+                <td>{{distributor.metode}}</td>
+                <td>{{distributor.kodeParsing}}</td>
+                <td>{{distributor.kodeParsing2}}</td>
+                <td>{{distributor.replyno}}</td>
+                <td>{{distributor.tglInput | date:'medium'}}</td>
+                <td>{{distributor.userInput}}</td>
+                <td>{{distributor.tglUpdate | date:'medium'}}</td>
+                <td>{{distributor.userUpdate}}</td>
+                <td>{{distributor.ip}}</td>
+                <td>{{distributor.isvre}}</td>
+                <td>{{distributor.isgtw}}</td>
+                <td>{{distributor.ugtw}}</td>
+                <td>{{distributor.isfilter}}</td>
+                <td>{{distributor.parseSaldo}}</td>
+                <td>{{distributor.parseHarga}}</td>
+                <td>{{distributor.tiketWrap}}</td>
+                <td>{{distributor.istiketsend}}</td>
+                <td>{{distributor.pesanTiket}}</td>
+                <td>{{distributor.saldoSupwarn}}</td>
+                <td>{{distributor.issortby}}</td>
+                <td>{{distributor.parseUnit}}</td>
+                <td>{{distributor.isulangim}}</td>
+                <td>{{distributor.ishlr}}</td>
+                <td>{{distributor.kodeParsing3}}</td>
+                <td>{{distributor.idHistory}}</td>
+                <td>{{distributor.kodeParsing4}}</td>
+                <td>{{distributor.selisihSupwarn}}</td>
+                <td>{{distributor.timeon}}</td>
+                <td>{{distributor.timeoff}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../distributor', distributor.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'distributor/'+ distributor.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'distributor/'+ distributor.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="distributors && distributors.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

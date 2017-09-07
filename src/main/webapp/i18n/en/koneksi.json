@@ -1,0 +1,27 @@
+{
+    "ayogatewayApp": {
+        "koneksi" : {
+            "home": {
+                "title": "Koneksis",
+                "createLabel": "Create a new Koneksi",
+                "createOrEditLabel": "Create or edit a Koneksi",
+                "search": "Search for Koneksi"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Koneksi {{ id }}?"
+            },
+            "detail": {
+                "title": "Koneksi"
+            },
+            "metode": "Metode",
+            "ket": "Ket"
+        }
+    },
+    "ayoappApp": {
+        "koneksi" : {
+            "created": "A new Koneksi is created with identifier {{ param }}",
+            "updated": "A Koneksi is updated with identifier {{ param }}",
+            "deleted": "A Koneksi is deleted with identifier {{ param }}"
+        }
+    }
+}

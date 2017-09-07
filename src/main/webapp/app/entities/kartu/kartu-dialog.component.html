@@ -1,0 +1,50 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myKartuLabel" jhiTranslate="ayogatewayApp.kartu.home.createOrEditLabel">Create or edit a Kartu</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!kartu.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="kartu.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.kartu.idKartu" for="field_idKartu">Id Kartu</label>
+            <input type="number" class="form-control" name="idKartu" id="field_idKartu"
+                [(ngModel)]="kartu.idKartu"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.kartu.nama" for="field_nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="field_nama"
+                [(ngModel)]="kartu.nama"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.kartu.idOperator" for="field_idOperator">Id Operator</label>
+            <input type="number" class="form-control" name="idOperator" id="field_idOperator"
+                [(ngModel)]="kartu.idOperator"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.kartu.cekHlr" for="field_cekHlr">Cek Hlr</label>
+            <input type="number" class="form-control" name="cekHlr" id="field_cekHlr"
+                [(ngModel)]="kartu.cekHlr"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="ayogatewayApp.kartu.ketkartu" for="field_ketkartu">Ketkartu</label>
+            <input type="text" class="form-control" name="ketkartu" id="field_ketkartu"
+                [(ngModel)]="kartu.ketkartu"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

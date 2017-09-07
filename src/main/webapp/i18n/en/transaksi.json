@@ -1,0 +1,37 @@
+{
+    "ayogatewayApp": {
+        "transaksi" : {
+            "home": {
+                "title": "Transaksis",
+                "createLabel": "Create a new Transaksi",
+                "createOrEditLabel": "Create or edit a Transaksi",
+                "search": "Search for Transaksi"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Transaksi {{ id }}?"
+            },
+            "detail": {
+                "title": "Transaksi"
+            },
+            "tglTransaksi": "Tgl Transaksi",
+            "idMember": "Id Member",
+            "nama": "Nama",
+            "jml": "Jml",
+            "kodeTrx": "Kode Trx",
+            "status": "Status",
+            "saldoAwal": "Saldo Awal",
+            "saldoAkhir": "Saldo Akhir",
+            "ket": "Ket",
+            "tglInput": "Tgl Input",
+            "userInput": "User Input",
+            "isstok": "Isstok"
+        }
+    },
+    "ayoappApp": {
+        "transaksi" : {
+            "created": "A new Transaksi is created with identifier {{ param }}",
+            "updated": "A Transaksi is updated with identifier {{ param }}",
+            "deleted": "A Transaksi is deleted with identifier {{ param }}"
+        }
+    }
+}

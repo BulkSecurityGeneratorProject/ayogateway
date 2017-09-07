@@ -1,0 +1,41 @@
+{
+    "ayogatewayApp": {
+        "smsHistory" : {
+            "home": {
+                "title": "Sms Histories",
+                "createLabel": "Create a new Sms History",
+                "createOrEditLabel": "Create or edit a Sms History",
+                "search": "Search for Sms History"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Sms History {{ id }}?"
+            },
+            "detail": {
+                "title": "Sms History"
+            },
+            "tglInput": "Tgl Input",
+            "noHp": "No Hp",
+            "nama": "Nama",
+            "pesan": "Pesan",
+            "tipe": "Tipe",
+            "tglSms": "Tgl Sms",
+            "com": "Com",
+            "report": "Report",
+            "trx": "Trx",
+            "posting": "Posting",
+            "ref": "Ref",
+            "msisdn": "Msisdn",
+            "enginename": "Enginename",
+            "ip": "Ip",
+            "typemsg": "Typemsg",
+            "idMember": "Id Member"
+        }
+    },
+    "ayoappApp": {
+        "smsHistory" : {
+            "created": "A new Sms History is created with identifier {{ param }}",
+            "updated": "A Sms History is updated with identifier {{ param }}",
+            "deleted": "A Sms History is deleted with identifier {{ param }}"
+        }
+    }
+}

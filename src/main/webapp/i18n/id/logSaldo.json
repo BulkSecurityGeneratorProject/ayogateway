@@ -1,0 +1,36 @@
+{
+    "ayogatewayApp": {
+        "logSaldo" : {
+            "home": {
+                "title": "Log Saldos",
+                "createLabel": "Buat Log Saldo baru",
+                "createOrEditLabel": "Buat atau edit Log Saldo",
+                "search": "Cari Log Saldo"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Log Saldo {{ id }}?"
+            },
+            "detail": {
+                "title": "Log Saldo"
+            },
+            "idMember": "Id Member",
+            "saldo": "Saldo",
+            "act": "Act",
+            "tgl": "Tgl",
+            "ket": "Ket",
+            "ref": "Ref",
+            "tkode": "Tkode",
+            "kodetrx": "Kodetrx",
+            "msg": "Msg",
+            "userInput": "User Input",
+            "isstok": "Isstok"
+        }
+    },
+    "ayoappApp": {
+        "logSaldo" : {
+            "created": "Log Saldo dengan id {{ param }} telah dibuat",
+            "updated": "Log Saldo dengan id {{ param }} telah diperbaharui",
+            "deleted": "Log Saldo dengan id {{ param }} telah dihapus"
+        }
+    }
+}

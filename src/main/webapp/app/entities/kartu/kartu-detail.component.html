@@ -1,0 +1,41 @@
+
+<div *ngIf="kartu">
+    <h2><span jhiTranslate="ayogatewayApp.kartu.detail.title">Kartu</span> {{kartu.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="ayogatewayApp.kartu.idKartu">Id Kartu</span></dt>
+        <dd>
+            <span>{{kartu.idKartu}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.kartu.nama">Nama</span></dt>
+        <dd>
+            <span>{{kartu.nama}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.kartu.idOperator">Id Operator</span></dt>
+        <dd>
+            <span>{{kartu.idOperator}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.kartu.cekHlr">Cek Hlr</span></dt>
+        <dd>
+            <span>{{kartu.cekHlr}}</span>
+        </dd>
+        <dt><span jhiTranslate="ayogatewayApp.kartu.ketkartu">Ketkartu</span></dt>
+        <dd>
+            <span>{{kartu.ketkartu}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'kartu/'+ kartu.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,27 @@
+{
+    "ayogatewayApp": {
+        "koneksi" : {
+            "home": {
+                "title": "Koneksis",
+                "createLabel": "Buat Koneksi baru",
+                "createOrEditLabel": "Buat atau edit Koneksi",
+                "search": "Cari Koneksi"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Koneksi {{ id }}?"
+            },
+            "detail": {
+                "title": "Koneksi"
+            },
+            "metode": "Metode",
+            "ket": "Ket"
+        }
+    },
+    "ayoappApp": {
+        "koneksi" : {
+            "created": "Koneksi dengan id {{ param }} telah dibuat",
+            "updated": "Koneksi dengan id {{ param }} telah diperbaharui",
+            "deleted": "Koneksi dengan id {{ param }} telah dihapus"
+        }
+    }
+}

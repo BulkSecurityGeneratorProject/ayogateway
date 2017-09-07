@@ -1,0 +1,92 @@
+<div>
+    <h2>
+        <span jhiTranslate="ayogatewayApp.rebate.home.title">Rebates</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rebate" [routerLink]="['/', { outlets: { popup: ['rebate-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="ayogatewayApp.rebate.home.createLabel">
+            Create new Rebate
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'ayogatewayApp.rebate.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rebates">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idTransaksi"><span jhiTranslate="ayogatewayApp.rebate.idTransaksi">Id Transaksi</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="jml"><span jhiTranslate="ayogatewayApp.rebate.jml">Jml</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="hargaProduk"><span jhiTranslate="ayogatewayApp.rebate.hargaProduk">Harga Produk</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMember"><span jhiTranslate="ayogatewayApp.rebate.idMember">Id Member</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="level"><span jhiTranslate="ayogatewayApp.rebate.level">Level</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bulan"><span jhiTranslate="ayogatewayApp.rebate.bulan">Bulan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tahun"><span jhiTranslate="ayogatewayApp.rebate.tahun">Tahun</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span jhiTranslate="ayogatewayApp.rebate.status">Status</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rebate of rebates ;trackBy: trackId">
+                <td><a [routerLink]="['../rebate', rebate.id ]">{{rebate.id}}</a></td>
+                <td>{{rebate.idTransaksi}}</td>
+                <td>{{rebate.jml}}</td>
+                <td>{{rebate.hargaProduk}}</td>
+                <td>{{rebate.idMember}}</td>
+                <td>{{rebate.level}}</td>
+                <td>{{rebate.bulan}}</td>
+                <td>{{rebate.tahun}}</td>
+                <td>{{rebate.status}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rebate', rebate.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rebate/'+ rebate.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rebate/'+ rebate.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- Pager is not implemented yet, so this is normal pagination instead -->
+        <div *ngIf="rebates && rebates.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

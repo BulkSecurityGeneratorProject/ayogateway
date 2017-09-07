@@ -1,0 +1,30 @@
+{
+    "ayogatewayApp": {
+        "kartu" : {
+            "home": {
+                "title": "Kartus",
+                "createLabel": "Buat Kartu baru",
+                "createOrEditLabel": "Buat atau edit Kartu",
+                "search": "Cari Kartu"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Kartu {{ id }}?"
+            },
+            "detail": {
+                "title": "Kartu"
+            },
+            "idKartu": "Id Kartu",
+            "nama": "Nama",
+            "idOperator": "Id Operator",
+            "cekHlr": "Cek Hlr",
+            "ketkartu": "Ketkartu"
+        }
+    },
+    "ayoappApp": {
+        "kartu" : {
+            "created": "Kartu dengan id {{ param }} telah dibuat",
+            "updated": "Kartu dengan id {{ param }} telah diperbaharui",
+            "deleted": "Kartu dengan id {{ param }} telah dihapus"
+        }
+    }
+}
